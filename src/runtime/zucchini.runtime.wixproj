@@ -41,20 +41,6 @@
     <SuppressSpecificWarnings>1055;1056;1076</SuppressSpecificWarnings>
     <LinkerAdditionalOptions>-xo -bf -o "$(SolutionDir)tmp\wix\zucchini-runtime.wixout"</LinkerAdditionalOptions>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ia64' ">
-    <DefineConstants>Debug</DefineConstants>
-    <OutputPath>$(SolutionDir)\setup\</OutputPath>
-    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
-    <SuppressSpecificWarnings>1055;1056;1076</SuppressSpecificWarnings>
-    <LinkerAdditionalOptions>-xo -bf -o "$(SolutionDir)tmp\wix\zucchini-runtime.wixout"</LinkerAdditionalOptions>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ia64' ">
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-    <OutputPath>$(SolutionDir)\setup\</OutputPath>
-    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
-    <SuppressSpecificWarnings>1055;1056;1076</SuppressSpecificWarnings>
-    <LinkerAdditionalOptions>-xo -bf -o "$(SolutionDir)tmp\wix\zucchini-runtime.wixout"</LinkerAdditionalOptions>
-  </PropertyGroup>
   <ItemGroup>
     <Compile Include="mergemods.wxs" />
     <Compile Include="runtime.wxs" />

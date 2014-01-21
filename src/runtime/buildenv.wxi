@@ -12,7 +12,7 @@
 	<!-- ZucchiniBinPath -->
 	<!-- Set to the platform-specific \bin path for the Zucchini project -->
 	<?if $(var.Platform) = "x64" ?>
-	<?define ZucchiniBinPath = $(var.SolutionDir)bin\amd64\$(var.Configuration)\ ?>
+	<?define ZucchiniBinPath = $(var.SolutionDir)bin\x64\$(var.Configuration)\ ?>
 	<?else?>
 	<?define ZucchiniBinPath = $(var.SolutionDir)bin\$(var.Platform)\$(var.Configuration)\ ?>
 	<?endif?>

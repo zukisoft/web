@@ -47,8 +47,6 @@
       <MergeRef Id="msvcrt_x86"/>
 			<?elseif $(var.Platform) = "x64" ?>
 			<MergeRef Id="msvcrt_x64"/>
-			<?elseif $(var.Platform) = "ia64" ?>
-			<MergeRef Id="msvcrt_ia64"/>
 			<?endif?>
 
       <!-- Visual C++ Runtime Libraries (Debug) -->
@@ -56,8 +54,6 @@
       <MergeRef Id="msvcrt_debug_x86"/>
 			<?elseif $(var.Platform) = "x64" and $(var.Configuration) = "Debug" ?>
 			<MergeRef Id="msvcrt_debug_x64"/>
-			<?elseif $(var.Platform) = "ia64" and $(var.Configuration) = "Debug" ?>
-			<MergeRef Id="msvcrt_debug_ia64"/>
 			<?endif?>
       
       <!-- Zucchini Runtime -->
@@ -65,8 +61,6 @@
       <MergeRef Id="zucchiniruntime_x86"/>
       <?elseif $(var.Platform) = "x64" ?>
       <MergeRef Id="zucchiniruntime_x64"/>
-      <?elseif $(var.Platform) = "ia64" ?>
-      <MergeRef Id="zucchiniruntime_ia64"/>
       <?endif?>
 
     </Feature>

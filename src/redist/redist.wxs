@@ -12,8 +12,6 @@
     <?define ModularizationGuid = "7E5D863D-E794-478B-B575-FDAADDC5BB24" ?>
   <?elseif $(var.Platform) = "x64" ?>
     <?define ModularizationGuid = "2E9815DA-EB8B-4A7A-A0A3-380CB0331B28" ?>  
-  <?elseif $(var.Platform) = "ia64" ?>
-    <?define ModularizationGuid = "7A8B2DC4-97B1-4FD5-8DD9-8780456A0669" ?>
   <?endif?>
   
   <Module Id="ZucchiniRuntime_$(var.Platform)" Language="0" Version="$(var.ProjectVersion.4)">
