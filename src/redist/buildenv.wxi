@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+
+  <!-- MergeModulePath -->
+  <!-- Set to the location of the VS2010 Merge Modules on the build machine -->
+  <?if $(env.PROCESSOR_ARCHITECTURE) = "x86" ?>
+  <?define MergeModulePath = $(env.CommonProgramFiles)\Merge Modules\ ?>
+  <?else ?>
+  <?define MergeModulePath = $(env.CommonProgramFiles(x86))\Merge Modules\ ?>
+  <?endif ?>
+
+	<!-- ZucchiniBinPath -->
+	<!-- Set to the platform-specific \bin path for the Zucchini project -->
+	<?if $(var.Platform) = "x64" ?>
+	<?define ZucchiniBinPath = $(var.SolutionDir)bin\amd64\$(var.Configuration)\ ?>
+	<?else?>
+	<?define ZucchiniBinPath = $(var.SolutionDir)bin\$(var.Platform)\$(var.Configuration)\ ?>
+	<?endif?>
+
+	<!-- ZucchiniBinPathX86 -->
+	<!-- Set to the X86-specific \bin path for the Zucchini project -->
+	<?define ZucchiniBinPathX86 = $(var.SolutionDir)bin\x86\$(var.Configuration)\ ?>
+
+  <!-- ZucchiniRedistPath -->
+  <!-- Set to the root \redist path for the Zucchini project -->
+  <?define ZucchiniRedistPath = $(var.SolutionDir)redist\ ?>
+
+  <!-- ZucchiniReferencePath -->
+  <!-- Set to the root \reference path for the Zucchini project -->
+  <?define ZucchiniReferencePath = $(var.SolutionDir)reference\ ?>
+
+  <!-- ZucchiniSetupPath -->
+  <!-- Set to the root \setup path for the Zucchini project -->
+  <?define ZucchiniSetupPath = $(var.SolutionDir)setup\ ?>
+
+  <!-- ZucchiniSourcePath -->
+  <!-- Set to the root \src path for the Zucchini project -->
+  <?define ZucchiniSourcePath = $(var.SolutionDir)src\ ?>
+
+  <!-- Win64Flag -->
+  <!-- Set to either YES or NO and can be used with the Win64 attributes on various things -->
+  <?if $(var.Platform) = "x86" ?>
+  <?define Win64Flag = "no" ?>
+  <?else?>
+  <?define Win64Flag = "yes" ?>
+  <?endif?>
+
+</Include>

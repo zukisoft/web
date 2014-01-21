@@ -1,0 +1,29 @@
+
+
+
+- Local file system pass-through for the Structured Storage virtual file system
+  NOTE: I'm not sure I really want to do this.  Not doing it would mean the loss
+  of the connection string as well.  Perhaps not a bad thing.
+  
+- I want UriPrefixXXXX to have a ToString() override that emits a valid URL
+  with host and port lookups as necessary. Probably a new ToString(String^ host).
+  
+- A special UriPrefix that accesses /temporary_listen_addresses on port 80
+  for ease of use with Standard Users
+  
+- Rework everything to allow for a base URI in the prefix .. this is harder than
+  it seems since we have everything coded to expect the virtual root to be the first
+  thing in the request URI ... much work to do, this is a big feature
+  
+ - BUG: UriPrefixCollection::Remove (and likely others) removes by object not by 
+   the key used in Contains()
+
+- Custom VirtualPathProviders that tie into my model and use the Store connection
+  string, etc.
+  
+- Enhance basic authentication; provide way for application to generate the token
+  and build-in a cache that operates on a per-connection basis to not need HTTP 401
+  with every single request
+
+- Enable directory listings
+

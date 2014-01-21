@@ -1,0 +1,30 @@
+
+CHANGES COMING IN .NET 3.5
+==========================
+
+(This is based on .NET 3.5 Beta 1, as compared on April 30, 2007)
+(VALIDATED AS CORRECT on December 14, 2007 against RTM version of .NET 3.5)
+
+- HttpListener appears to have many changes related to NTLM and Digest authentication, 
+  none of which should have any effect on anything we do directly.  Any enhancements
+  should be picked up automatically by virtue of just installing .NET 3.5
+  
+- HttpRequestStreamAsyncResult has a bug fixed that might allow us to properly
+  use async processing there, but it's not very important feeling to me right now.
+  UPDATE: There are no code changes in the final version; async still sucks
+  
+- HostingEnvironment now exposes the IApplicationHost-based object.  Don't think
+  this does anything useful for us.
+  
+- HostingEnvironment still does NOT allow precompiled applications to work with a
+  VirtualPathProvider unlike the changes to .NET 2.0 from the Vista Compatibility
+  update to Visual Studio 2005. Make up your minds, please.
+  
+- WebHeaderCollection is NOT fixed, and since HttpListenerResponse still uses it
+  we cannot get rid of the "header hack" yet.  HttpRuntime did have some changes
+  that look like it would solve the cookie problem, but who cares if the listener
+  classes don't leverage it properly?
+  
+===================================================
+SUMMARY: NOTHING OF ANY VALUE GOT FIXED IN .NET 3.5
+===================================================

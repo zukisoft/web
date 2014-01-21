@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Itanium">
+      <Configuration>Debug</Configuration>
+      <Platform>Itanium</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Itanium">
+      <Configuration>Release</Configuration>
+      <Platform>Itanium</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{36BB1DDE-C623-4866-A790-B93791354F43}</ProjectGuid>
+    <RootNamespace>zuki.web.server</RootNamespace>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Keyword>ManagedCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>Pure</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>Pure</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>Pure</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>Pure</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>Pure</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>Pure</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)bin\$(PlatformShortName)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkKeyFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)reference\zucchini.snk</LinkKeyFile>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)bin\$(PlatformShortName)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <LinkKeyFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)reference\zucchini.snk</LinkKeyFile>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">$(SolutionDir)bin\$(PlatformShortName)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">true</LinkIncremental>
+    <LinkKeyFile Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">$(SolutionDir)reference\zucchini.snk</LinkKeyFile>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)bin\$(PlatformShortName)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkKeyFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)reference\zucchini.snk</LinkKeyFile>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)bin\$(PlatformShortName)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <LinkKeyFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)reference\zucchini.snk</LinkKeyFile>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">$(SolutionDir)bin\$(PlatformShortName)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">false</LinkIncremental>
+    <LinkKeyFile Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">$(SolutionDir)reference\zucchini.snk</LinkKeyFile>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">zuki.$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">zuki.$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">zuki.$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">zuki.$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">zuki.$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">zuki.$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>crypt32.lib;iphlpapi.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(RootNamespace).dll</OutputFile>
+      <EmbedManagedResourceFile>401.htm;403.htm;403-4.htm;403-7.htm;403-16.htm;403-17.htm;$(SolutionDir)tmp\version\version.txt;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <KeyFile>$(SolutionDir)reference\zucchini.snk</KeyFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>crypt32.lib;iphlpapi.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(RootNamespace).dll</OutputFile>
+      <EmbedManagedResourceFile>401.htm;403.htm;403-4.htm;403-7.htm;403-16.htm;403-17.htm;$(SolutionDir)tmp\version\version.txt;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX64</TargetMachine>
+      <KeyFile>$(SolutionDir)reference\zucchini.snk</KeyFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">
+    <Midl>
+      <TargetEnvironment>Itanium</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>crypt32.lib;iphlpapi.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(RootNamespace).dll</OutputFile>
+      <EmbedManagedResourceFile>401.htm;403.htm;403-4.htm;403-7.htm;403-16.htm;403-17.htm;$(SolutionDir)tmp\version\version.txt;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineIA64</TargetMachine>
+      <KeyFile>$(SolutionDir)reference\zucchini.snk</KeyFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>crypt32.lib;iphlpapi.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(RootNamespace).dll</OutputFile>
+      <EmbedManagedResourceFile>401.htm;403.htm;403-4.htm;403-7.htm;403-16.htm;403-17.htm;$(SolutionDir)tmp\version\version.txt;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <KeyFile>$(SolutionDir)reference\zucchini.snk</KeyFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>crypt32.lib;iphlpapi.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(RootNamespace).dll</OutputFile>
+      <EmbedManagedResourceFile>401.htm;403.htm;403-4.htm;403-7.htm;403-16.htm;403-17.htm;$(SolutionDir)tmp\version\version.txt;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX64</TargetMachine>
+      <KeyFile>$(SolutionDir)reference\zucchini.snk</KeyFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">
+    <Midl>
+      <TargetEnvironment>Itanium</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>crypt32.lib;iphlpapi.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(RootNamespace).dll</OutputFile>
+      <EmbedManagedResourceFile>401.htm;403.htm;403-4.htm;403-7.htm;403-16.htm;403-17.htm;$(SolutionDir)tmp\version\version.txt;%(EmbedManagedResourceFile)</EmbedManagedResourceFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineIA64</TargetMachine>
+      <KeyFile>$(SolutionDir)reference\zucchini.snk</KeyFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Web">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Xml">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Data">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\tmp\version\version.cpp" />
+    <ClCompile Include="ApplicationRestarter.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="AuthenticationConfiguration.cpp" />
+    <ClCompile Include="ClientCertificate.cpp" />
+    <ClCompile Include="Host.cpp" />
+    <ClCompile Include="LogEntry.cpp" />
+    <ClCompile Include="ProjectUtil.cpp" />
+    <ClCompile Include="RequestHandler.cpp" />
+    <ClCompile Include="RequestUri.cpp" />
+    <ClCompile Include="ServerCertificate.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StorageChildEnumerator.cpp" />
+    <ClCompile Include="StorageConnectionStringBuilder.cpp" />
+    <ClCompile Include="StorageDirectoryEnumerator.cpp" />
+    <ClCompile Include="StorageFileEnumerator.cpp" />
+    <ClCompile Include="StoragePath.cpp" />
+    <ClCompile Include="StoragePathProvider.cpp" />
+    <ClCompile Include="UriPrefix.cpp" />
+    <ClCompile Include="UriPrefixCollection.cpp" />
+    <ClCompile Include="VirtualFileSystemConfiguration.cpp" />
+    <ClCompile Include="WebApplication.cpp" />
+    <ClCompile Include="WebApplicationCollection.cpp" />
+    <ClCompile Include="WebApplicationConfiguration.cpp" />
+    <ClCompile Include="WebApplicationEnumerator.cpp" />
+    <ClCompile Include="WebApplicationEvents.cpp" />
+    <ClCompile Include="WebServer.cpp" />
+    <ClCompile Include="..\..\data\structured\ComCache.cpp" />
+    <ClCompile Include="..\..\data\structured\ComPropertyStorage.cpp" />
+    <ClCompile Include="..\..\data\structured\ComStorage.cpp" />
+    <ClCompile Include="..\..\data\structured\ComStream.cpp" />
+    <ClCompile Include="..\..\data\structured\StorageContainer.cpp" />
+    <ClCompile Include="..\..\data\structured\StorageContainerCollection.cpp" />
+    <ClCompile Include="..\..\data\structured\StorageContainerEnumerator.cpp" />
+    <ClCompile Include="..\..\data\structured\StorageException.cpp" />
+    <ClCompile Include="..\..\data\structured\StorageNameMapper.cpp" />
+    <ClCompile Include="..\..\data\structured\StorageObject.cpp" />
+    <ClCompile Include="..\..\data\structured\StorageObjectCollection.cpp" />
+    <ClCompile Include="..\..\data\structured\StorageObjectEnumerator.cpp" />
+    <ClCompile Include="..\..\data\structured\StorageObjectStream.cpp" />
+    <ClCompile Include="..\..\data\structured\StoragePropertySet.cpp" />
+    <ClCompile Include="..\..\data\structured\StoragePropertySetCollection.cpp" />
+    <ClCompile Include="..\..\data\structured\StoragePropertySetEnumerator.cpp" />
+    <ClCompile Include="..\..\data\structured\StorageSummaryInformation.cpp" />
+    <ClCompile Include="..\..\data\structured\StorageUtil.cpp" />
+    <ClCompile Include="..\..\data\structured\StructuredStorage.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ApplicationRestarter.h" />
+    <ClInclude Include="AuthenticationConfiguration.h" />
+    <ClInclude Include="ClientCertificate.h" />
+    <ClInclude Include="exceptions.h" />
+    <ClInclude Include="HashCodeCombiner.h" />
+    <ClInclude Include="Host.h" />
+    <ClInclude Include="LogEntry.h" />
+    <ClInclude Include="LoggingFormat.h" />
+    <ClInclude Include="ProjectUtil.h" />
+    <ClInclude Include="ReadOnlyDictionary.h" />
+    <ClInclude Include="RequestHandler.h" />
+    <ClInclude Include="RequestUri.h" />
+    <ClInclude Include="ServerCertificate.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StorageChildCollection.h" />
+    <ClInclude Include="StorageChildEnumerator.h" />
+    <ClInclude Include="StorageConnectionStringBuilder.h" />
+    <ClInclude Include="StorageDirectory.h" />
+    <ClInclude Include="StorageDirectoryCollection.h" />
+    <ClInclude Include="StorageDirectoryEnumerator.h" />
+    <ClInclude Include="StorageFile.h" />
+    <ClInclude Include="StorageFileCollection.h" />
+    <ClInclude Include="StorageFileEnumerator.h" />
+    <ClInclude Include="StoragePath.h" />
+    <ClInclude Include="StoragePathProvider.h" />
+    <ClInclude Include="UriPrefix.h" />
+    <ClInclude Include="UriPrefixCollection.h" />
+    <ClInclude Include="UriPrefixHost.h" />
+    <ClInclude Include="UriPrefixPort.h" />
+    <ClInclude Include="UriPrefixScheme.h" />
+    <ClInclude Include="VirtualFileSystemAccessMode.h" />
+    <ClInclude Include="VirtualFileSystemConfiguration.h" />
+    <ClInclude Include="VirtualFileSystemType.h" />
+    <ClInclude Include="WebApplication.h" />
+    <ClInclude Include="WebApplicationCollection.h" />
+    <ClInclude Include="WebApplicationConfiguration.h" />
+    <ClInclude Include="WebApplicationEnumerator.h" />
+    <ClInclude Include="WebApplicationErrorPage.h" />
+    <ClInclude Include="WebApplicationEvents.h" />
+    <ClInclude Include="WebServer.h" />
+    <ClInclude Include="WebServerVersion.h" />
+    <ClInclude Include="XmlConstants.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="..\..\data\structured\ComCache.h" />
+    <ClInclude Include="..\..\data\structured\ComPropertyStorage.h" />
+    <ClInclude Include="..\..\data\structured\ComStorage.h" />
+    <ClInclude Include="..\..\data\structured\ComStream.h" />
+    <ClInclude Include="..\..\data\structured\IComPointer.h" />
+    <ClInclude Include="..\..\data\structured\IComPropertySetStorage.h" />
+    <ClInclude Include="..\..\data\structured\IComPropertyStorage.h" />
+    <ClInclude Include="..\..\data\structured\IComStorage.h" />
+    <ClInclude Include="..\..\data\structured\IComStream.h" />
+    <ClInclude Include="..\..\data\structured\StorageAccessMode.h" />
+    <ClInclude Include="..\..\data\structured\StorageContainer.h" />
+    <ClInclude Include="..\..\data\structured\StorageContainerCollection.h" />
+    <ClInclude Include="..\..\data\structured\StorageContainerEnumerator.h" />
+    <ClInclude Include="..\..\data\structured\StorageException.h" />
+    <ClInclude Include="..\..\data\structured\StorageExceptions.h" />
+    <ClInclude Include="..\..\data\structured\StorageNameMapper.h" />
+    <ClInclude Include="..\..\data\structured\StorageObject.h" />
+    <ClInclude Include="..\..\data\structured\StorageObjectCollection.h" />
+    <ClInclude Include="..\..\data\structured\StorageObjectEnumerator.h" />
+    <ClInclude Include="..\..\data\structured\StorageObjectReader.h" />
+    <ClInclude Include="..\..\data\structured\StorageObjectStream.h" />
+    <ClInclude Include="..\..\data\structured\StorageObjectStreamMode.h" />
+    <ClInclude Include="..\..\data\structured\StorageObjectWriter.h" />
+    <ClInclude Include="..\..\data\structured\StorageOpenMode.h" />
+    <ClInclude Include="..\..\data\structured\StoragePropertySet.h" />
+    <ClInclude Include="..\..\data\structured\StoragePropertySetCollection.h" />
+    <ClInclude Include="..\..\data\structured\StoragePropertySetEnumerator.h" />
+    <ClInclude Include="..\..\data\structured\StorageSummaryInformation.h" />
+    <ClInclude Include="..\..\data\structured\StorageUtil.h" />
+    <ClInclude Include="..\..\data\structured\StructuredStorage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\tmp\version\version.txt" />
+    <None Include="401.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="403-16.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="403-17.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="403-4.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="403-7.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="403.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="changelog.txt" />
+    <None Include="dotnet-changes.txt" />
+    <None Include="roadmap.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\tmp\version\version.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\_version\_version.csproj">
+      <Project>{43fccf05-f442-4201-bfab-4b782d192cff}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

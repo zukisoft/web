@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <!-- Version -->
+  <?include $(var.SolutionDir)tmp\version\version.wxi ?>
+  
+  <!-- Build Environment -->
+  <?include $(var.ProjectDir)buildenv.wxi ?>
+
+  <Product Id="*"
+    Name="Zucchini $(var.Platform) Runtime $(var.ProjectVersion.4)"
+    Language="1033"
+    Version="$(var.ProjectVersion.4)"
+    Manufacturer="ZukiSoft, LLC"
+    UpgradeCode="124275C9-90BF-46A9-8537-530EB97202C8"> <!-- NEVER CHANGE THE UPGRADE CODE -->
+
+    <Package InstallerVersion="300" Compressed="yes" Platform="$(var.Platform)"/>
+    <Media Id="1" Cabinet="zucchini_$(var.Platform).cab" EmbedCab="yes" />
+
+    <!-- UPGRADES -->
+    <Upgrade Id='124275C9-90BF-46A9-8537-530EB97202C8'>
+      <UpgradeVersion OnlyDetect="no" Property="PATCHFOUND" IncludeMinimum="yes" IncludeMaximum="yes"
+        Minimum="0.0.1" Maximum="127.254.32767"/>
+    </Upgrade>
+
+		<!-- ALL USERS -->
+		<Property Id="ALLUSERS"><![CDATA[2]]></Property>
+
+		<!-- DISALLOW ADVERTISED SHORTCUTS -->
+		<Property Id="DISABLEADVTSHORTCUTS" Value="1" />
+
+		<!-- ENVIRONMENTAL CONDITION: Microsoft .NET 4.0 -->
+		<PropertyRef Id="NETFRAMEWORK40FULL" />
+		<Condition Message="The Microsoft .NET Framework version 4.0 is not installed. Please install before installing the Zucchini Runtime.">
+			<![CDATA[Installed OR (NETFRAMEWORK40FULL AND NOT NETFRAMEWORK40FULL = "#0")]]>
+		</Condition>
+
+    <!-- LAYOUT -->
+    <Directory Id="TARGETDIR" Name="SourceDir"/>
+
+     <!-- FEATURE: ZUCCHINI RUNTIME -->
+		<Feature Id="feature_zucchini" Title="Zucchini Runtime" Level="1" TypicalDefault="install"
+      Description="Installs the Zucchini Runtime" Absent="disallow" AllowAdvertise="no">
+
+      <!-- Visual C++ Runtime Libraries (Release) -->
+      <?if $(var.Platform) = "x86" ?>
+      <MergeRef Id="msvcrt_x86"/>
+			<?elseif $(var.Platform) = "x64" ?>
+			<MergeRef Id="msvcrt_x64"/>
+			<?elseif $(var.Platform) = "ia64" ?>
+			<MergeRef Id="msvcrt_ia64"/>
+			<?endif?>
+
+      <!-- Visual C++ Runtime Libraries (Debug) -->
+      <?if $(var.Platform) = "x86" and $(var.Configuration) = "Debug" ?>
+      <MergeRef Id="msvcrt_debug_x86"/>
+			<?elseif $(var.Platform) = "x64" and $(var.Configuration) = "Debug" ?>
+			<MergeRef Id="msvcrt_debug_x64"/>
+			<?elseif $(var.Platform) = "ia64" and $(var.Configuration) = "Debug" ?>
+			<MergeRef Id="msvcrt_debug_ia64"/>
+			<?endif?>
+      
+      <!-- Zucchini Runtime -->
+      <?if $(var.Platform) = "x86" ?>
+      <MergeRef Id="zucchiniruntime_x86"/>
+      <?elseif $(var.Platform) = "x64" ?>
+      <MergeRef Id="zucchiniruntime_x64"/>
+      <?elseif $(var.Platform) = "ia64" ?>
+      <MergeRef Id="zucchiniruntime_ia64"/>
+      <?endif?>
+
+    </Feature>
+
+		<!-- USER INTERFACE SELECTION -->
+    <UIRef Id="WixUI_Minimal" />
+
+    <InstallExecuteSequence>
+      <RemoveExistingProducts After="InstallValidate" />
+    </InstallExecuteSequence>
+  
+  </Product>
+
+</Wix>

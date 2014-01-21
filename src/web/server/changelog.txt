@@ -1,0 +1,213 @@
+
+============
+ZUCCHINI 0.4
+============
+
+- New Visual Studio 2010 solution; target platform is now .NET 4.0
+
+- New enhanced MKVERSION tool and associated changes to accomodate it.  A master version
+  file, build\version.ini can be used and checked in to automatically set the base version
+  number, or used to override the code to a specific version for compatibility/patching.
+
+- Catch write exceptions during response and set IsClientConnected to false to allow
+  streaming-type applications to know when the client is no longer listening
+
+============
+ZUCCHINI 0.3
+============
+
+ENHANCEMENTS
+
+- WebApplication: Exposed the application identifier as a new .ID property
+
+- AuthenticationConfiguration, Host: Added new .CacheNtlmCredentials which instructs the
+  listener to only authenticate NTLM requests once for any given TCP connection.
+  
+- Added new class StorageConnectionStringBuilder, an ADO.NET DbConnectionStringBuilder
+  specialization, which assists with constructing and parsing the forthcoming structured
+  storage connection strings. Completely ripped off from my zuki.data.dbms library.
+  
+- WebApplicationConfiguration / StoragePathProvider : Converted raw .Store processing
+  as a single file name into a "Data Source=" processing based on the connection string
+  to allow for further expansion of that concept for things like pass-through
+  
+- WebApplication: Restart() now waits for a generally reasonable amount of time for the
+  application to actually restart before returning, but that whole TryGetHostWithWait
+  still needs some additional effort to be 'good' .. see comments in ProjectUtil.cpp
+  
+- Host: Uses the HttpListener asynchronous processing model again.  This was removed and
+  replaced with a custom implementation during the alpha builds due to serious problems
+  that kept cropping up. A preprocessor directive was used in the code to make sure it will 
+  be easy to go back to the way things were if testing doesn't go well again.
+
+REMOVALS
+
+- WebApplicationEvents, WebServer, Host: Removed the assembly and resource resolve events.  
+  They didn't work right in 0.2, and fixing them just ended up causing infinite loops since 
+  it would end up re-firing the assembly/resource resolve event over and over as the assembly 
+  was passed back.  It wasn't very useful (as indicated below in the 0.2 notes) as it is, so
+  I just removed them.  One side effect that remains is the ability to properly pass data
+  as a result across the domains, but none of the current handlers take advantage of that.
+  
+BUG FIXES
+
+- Host: It seems they fixed something in .NET, and now when the host is shutdown normally,
+  (Host::Shutdown) we actually get the proper "HostingEnvironment" reason code instead of "None".  
+  This would cause the Host to immediately restart itself while it was trying to shut down, and 
+  caused some weirdness here and there. I left traps for both "None" and "HostingEnvironment" in 
+  place for compatibility with the RTM version of the .NET 2.0 Framework and the patched version.
+
+- ProjectUtil: The FindOpenTcpPort function did not take into account that the port values
+  returned by GetTcpTable are in Network Byte Order and need to be convered to the proper
+  endian-ness before they are useful.
+
+============
+ZUCCHINI 0.2
+============
+
+LICENSING CHANGES
+
+- Switched entire project to use the Common Public License 1.0
+
+ENHANCEMENTS
+
+- WebApplicationConfiguration, RequestHandler: Added new Dictionary of values that can
+  be specified as custom static request headers.  These headers are automatically added
+  to every request so the ASP.NET application can access them via Request.Headers or
+  Request.ServerVariables (by prefixing them with HTTP_).
+  
+- WebApplication: Added ability to create and manipulate IRegisteredObject-based objects
+  directly from this class.  This provides a fairly robust means of communication between
+  the host application and the web application.
+
+- WebServer, WebApplicationEvents, Host: Added new ApplicationStarting event and underlying
+  implementation to allow the calling application to manipulate the host prior to the listener
+  actually being started.  This directly supports the new CreateObject() mechanisms.
+  
+- ASSEMBLY: Build is now /clr:pure.  The Structured Storage library needed a few minor changes
+  to support this.  Specifically, the external IIDs and FMTIDs had to be replaced with
+  __uuidof() or locally defined GUIDs.  Pure assemblies don't have the same static/global
+  behaviors as mixed mode assemblies do, and they became unresolved externals at link time.
+  
+- WebServer: Added new static method GetAvailablePort that automatically selects an
+  available TCP port in the range of 32768->65535. A random value is used to seed the
+  base address so it shouldn't return the same value every time it's called.
+  
+- VirtualFileSystemConfiguration: Added new VirtualFileSystemType class to allow for more
+  than just "on/off" for the Virtual File System.  My intention is to allow the use of a 
+  Micrsoft .VHD file and perhaps even a database connection in addition to structured storage.
+  The new .Type replaces the old .Enabled property.  The .StorageFile property has also been
+  renamed to .Store to allow more flexibility in it's implementation, and a new property
+  called .AccessMode has been added for future expansion into read/write stores (like WebDAV)
+  
+- WebApplicationConfiguration: Added new IsComplete() method to allow utility type 
+  applications to know if a configuration has enough information to even try creating it
+  
+- UriPrefixPort, Host: Created special "Dynamic" port, defined as zero, which if
+  encountered by the host will be set to a dynamically allocated port right before the
+  listener starts.  The only way to find out what this port has been set to is to examine
+  the configuration after the app starts, either via a WebApplication instance or one of
+  the WebServer events that expose it.
+  
+- WebApplication, Host: Added new GetLoadedAssemblies() method to allow the calling
+  application to expose information about the assemblies that have been loaded into the
+  web application domain.
+  
+- RequestHandler: Replaced dead APPL_MD_PATH server variable with the hosted application
+  ID string instead.  This makes life a lot easier when using the registered objects since
+  a partial trust application cannot access HostingEnvironment::ApplicationID.
+  
+- StoragePathProvider, RequestHandler, Host: Added custom static content handlers when
+  the virtual file system is enabled.  RequestHandler deals with the response headers
+  Accept-Ranges, Last-Modified, Expires and ETag.  Host deals with sending back the
+  HTTP 304 Not Modified response if the resource has not been altered from the browser's
+  cached version (note that older = modified).  I did this because I honestly couldn't
+  get the runtime to ever send HTTP 304 for static content when a VirtualPathProvider is
+  used.  If you examine StaticFileHandler in the runtime, you'll see it's not really 
+  hooked up quite as well as it should be.
+  
+- VirtualFileSystemConfiguration, RequestHandler: Added new .NonCacheableExtensions 
+  collection to allow the application to override the defaults used when detecting
+  static content in a virtualized web site
+  
+- Added new x64 configurations; had to make some extremely minor tweaks with static_cast<>
+
+- WebApplicationConfiguration: Added .ToXml and .FromXml persistence functions. The implementation
+  is rather clunky and basic, and it really should have a schema file, but it does work.
+  
+- Made up new some UriPrefix constants for the special values we have for host, like
+  the local DNS name, loopback, etc.  This way the special host values can be persisted
+  into XML (or binary if one is so inclined and doesn't mind the versioning issues) with
+  their special names, but still resolved into real host names at runtime
+  
+- WebServer, Host, WebApplicationEvents: Added new (and somewhat complicated) events
+  to the main WebServer instance that hook into the hosted application domain's 
+  AssemblyResolve and ResourceResolve events.  These aren't really as useful in the ASP.NET
+  world as they could be since most failures will occur when the domain is created and well
+  before we can hook into it like this.  However it could be useful for debugging purposes
+  or for loading assemblies/resources that aren't 'compiled in' to the web application. 
+  Future versions of Zucchini might bring back the "DomainManager" from the proof of concept
+  (thanks to changes coming in the .NET framework) which allows for the domain to be hooked
+  as it's actually being created .. THEN it's a much more useful concept.
+  
+BUG FIXES
+
+- RequestUri: Added UrlDecode calls when parsing the URIs to correctly handle resources
+  that have embedded spaces or other URL encoded values in them.
+  
+- WebServerVersion: Embedded "webVersion.txt" as a resource that can be loaded to get
+  the web server version information rather than trying to read it from the assembly.
+  This was an issue in partial trust environments since the web application could not
+  access the assembly file to get it that way.
+  
+- RequestHandler: Removed support for APPL_MD_PATH server variable as it was causing
+  an exception in parial trust environments.  The variable wasn't accurate to IIS anyway,
+  since we have no metabase path to expose. (UPDATE: APPL_MD_PATH was then replaced with
+  the hosted application ID string .. see 0.2 enhancement list above)
+  
+- RequestHandler: Chunked responses were not being handled properly at all and had to have
+  numerous corrections made.  Both the HttpRuntime and the HttpListenerResponse were handling
+  the chunk header/terminators, so the end result was highly corrupt data returned to the client.
+  Now RequestHandler is set up to not actually send the header and terminator, just the data
+  itself.  HttpListenerResponse re-adds the necessary goodies on it's own.  Note that the
+  SendResponseFromStream function was modified to always use SendResponseFromMemory to ensure
+  that the chunked data is handled with the same procedure.
+  
+- RequestHandler: Changed method of determining if headers have been sent to the client
+  by using reflection on HttpListenerRequest.  The original method of setting the 
+  ContentLength64 to itself and checking for an exception would interfere with the proper
+  handling of chunked response data
+  
+- RequestHandler: Some instances of POSTed data would crash with an I/O exception in the
+  ReadEntityBody function.  As a preliminary solution, it has been wrapped with an
+  exception handler, and that seems to have been sufficient.  The HttpRuntime seems to 
+  retry the read until it works.  Ideally I need to go back and see if this is an expected
+  place to get I/O exceptions (like with writing to the response stream), or if the entire
+  entity body needs to be preloaded or what.  I'm fairly confident the exception handler will
+  do the job, since it makes sense that HttpListenerExceptions would occur there.
+  
+- StoragePathProvider: Added proper handling of "~/" to GetDirectory and GetFile
+
+- Host: Added traps for unsupported HTTP method verbs "CONNECT", "OPTIONS" and "TRACE" 
+  that will all send back HTTP 405 Method Not Allowed.  The ASP.NET runtime has some kind
+  of bug where it will set the 405 but then go ahead and respond anyway, at least for
+  the "OPTIONS" verb.  Note that this behaves poorly in Cassini as well, but since that
+  program uses a raw TCP connection, it happily sends the 405 *and* the data to the browser.
+  By using HttpListener, we end up generating an exception, which slows everything down to
+  a crawl when things like Microsoft Word 2007 try and communicate with us.
+  
+- Host, WebApplication: Replaced calls to WebApplicationConfiguration.PhysicalRoot with
+  calls to WebApplicationConfiguration.PhysicalRootFull to solve issue with relative paths.
+  Also added calls to ExpandEnvironmentVariables while I was in there to allow them
+  to be specified and expanded automatically.  Might come in handy for someone.
+  
+- RequestHandler: Changed 'cookie header hack' into a general 'header hack' that is now
+  used to append ALL response headers.  During testing the problem of the internal
+  NameValueCollection lumping headers together was more rampant than with just Set-Cookie,
+  and while slower overall, it should save a lot of troubleshooting time for the apps
+  
+============
+ZUCCHINI 0.1
+============
+
+First beta version; no change log was kept

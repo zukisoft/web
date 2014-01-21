@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="zuki.data.structured">
+      <UniqueIdentifier>{322f7201-156c-49be-b359-382523de268c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="zuki.data.structured\Header Files">
+      <UniqueIdentifier>{0d3c256a-d23e-4f2a-b77a-7d42a9b3cd12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="zuki.data.structured\Source Files">
+      <UniqueIdentifier>{b028856a-3a54-40b5-9de7-b6943c84f8e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{24c37a5c-7216-4fd8-9df5-d03a27cb3008}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ApplicationRestarter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AssemblyInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AuthenticationConfiguration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientCertificate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Host.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LogEntry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RequestHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RequestUri.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerCertificate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StorageChildEnumerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StorageConnectionStringBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StorageDirectoryEnumerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StorageFileEnumerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StoragePath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StoragePathProvider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UriPrefix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UriPrefixCollection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualFileSystemConfiguration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WebApplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WebApplicationCollection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WebApplicationConfiguration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WebApplicationEnumerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WebApplicationEvents.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WebServer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\ComCache.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\ComPropertyStorage.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\ComStorage.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\ComStream.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\StorageContainer.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\StorageContainerCollection.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\StorageContainerEnumerator.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\StorageException.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\StorageNameMapper.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\StorageObject.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\StorageObjectCollection.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\StorageObjectEnumerator.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\StorageObjectStream.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\StoragePropertySet.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\StoragePropertySetCollection.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\StoragePropertySetEnumerator.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\StorageSummaryInformation.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\StorageUtil.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data\structured\StructuredStorage.cpp">
+      <Filter>zuki.data.structured\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\tmp\version\version.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ApplicationRestarter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthenticationConfiguration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientCertificate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="exceptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HashCodeCombiner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Host.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LogEntry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoggingFormat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadOnlyDictionary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RequestHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RequestUri.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerCertificate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StorageChildCollection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StorageChildEnumerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StorageConnectionStringBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StorageDirectory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StorageDirectoryCollection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StorageDirectoryEnumerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StorageFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StorageFileCollection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StorageFileEnumerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StoragePath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StoragePathProvider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UriPrefix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UriPrefixCollection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UriPrefixHost.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UriPrefixPort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UriPrefixScheme.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualFileSystemAccessMode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualFileSystemConfiguration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualFileSystemType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WebApplication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WebApplicationCollection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WebApplicationConfiguration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WebApplicationEnumerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WebApplicationErrorPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WebApplicationEvents.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WebServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WebServerVersion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlConstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\ComCache.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\ComPropertyStorage.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\ComStorage.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\ComStream.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\IComPointer.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\IComPropertySetStorage.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\IComPropertyStorage.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\IComStorage.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\IComStream.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageAccessMode.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageContainer.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageContainerCollection.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageContainerEnumerator.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageException.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageExceptions.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageNameMapper.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageObject.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageObjectCollection.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageObjectEnumerator.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageObjectReader.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageObjectStream.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageObjectStreamMode.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageObjectWriter.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageOpenMode.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StoragePropertySet.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StoragePropertySetCollection.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StoragePropertySetEnumerator.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageSummaryInformation.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StorageUtil.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data\structured\StructuredStorage.h">
+      <Filter>zuki.data.structured\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="401.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="403-16.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="403-17.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="403-4.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="403-7.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="403.htm">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="changelog.txt" />
+    <None Include="dotnet-changes.txt" />
+    <None Include="roadmap.txt" />
+    <None Include="..\..\..\tmp\version\version.txt">
+      <Filter>Generated Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\..\tmp\version\version.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

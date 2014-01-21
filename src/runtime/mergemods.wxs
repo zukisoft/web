@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <!-- MERGEMODS.WXS - External Merge Module entries -->
+  
+  <?include $(var.ProjectDir)buildenv.wxi?>
+
+  <Fragment>
+
+    <DirectoryRef Id="TARGETDIR">
+      
+      <!-- Zucchini Runtime Merge Modules -->
+      <?if $(var.Platform) = "x86"?>
+      <Merge Id="zucchiniruntime_x86" Language="0" DiskId="1" SourceFile="$(var.ZucchiniRedistPath)zucchini-runtime-x86.msm"/>
+      <?elseif $(var.Platform) = "x64"?>
+      <Merge Id="zucchiniruntime_x64" Language="0" DiskId="1" SourceFile="$(var.ZucchiniRedistPath)zucchini-runtime-x64.msm"/>
+      <?elseif $(var.Platform) = "ia64"?>
+      <Merge Id="zucchiniruntime_ia64" Language="0" DiskId="1" SourceFile="$(var.ZucchiniRedistPath)zucchini-runtime-ia64.msm"/>
+      <?endif?>
+
+      <!-- Visual C++ Runtime Library Merge Modules (Release) -->
+      <?if $(var.Platform) = "x86"?>
+      <Merge Id="msvcrt_x86" Language="0" DiskId="1" SourceFile="$(var.MergeModulePath)Microsoft_VC100_CRT_x86.msm"/>
+      <?elseif $(var.Platform) = "x64"?>
+      <Merge Id="msvcrt_x64" Language="0" DiskId="1" SourceFile="$(var.MergeModulePath)Microsoft_VC100_CRT_x64.msm"/>
+			<?elseif $(var.Platform) = "ia64"?>
+			<Merge Id="msvcrt_ia64" Language="0" DiskId="1" SourceFile="$(var.MergeModulePath)Microsoft_VC100_CRT_ia64.msm"/>
+			<?endif?>
+
+			<!-- Visual C++ Runtime Library Merge Modules (Debug) -->
+      <?if $(var.Platform) = "x86" and $(var.Configuration) = "Debug" ?>
+      <Merge Id="msvcrt_debug_x86" Language="0" DiskId="1" SourceFile="$(var.MergeModulePath)Microsoft_VC100_DebugCRT_x86.msm"/>
+			<?elseif $(var.Platform) = "x64" and $(var.Configuration) = "Debug" ?>
+			<Merge Id="msvcrt_debug_x64" Language="0" DiskId="1" SourceFile="$(var.MergeModulePath)Microsoft_VC100_DebugCRT_x64.msm"/>
+			<?elseif $(var.Platform) = "ia64" and $(var.Configuration) = "Debug" ?>
+			<Merge Id="msvcrt_debug_ia64" Language="0" DiskId="1" SourceFile="$(var.MergeModulePath)Microsoft_VC100_DebugCRT_ia64.msm"/>
+			<?endif?>
+
+		</DirectoryRef>
+
+    </Fragment>
+
+</Wix>

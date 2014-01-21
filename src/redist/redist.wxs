@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <!-- Version -->
+  <?include $(var.SolutionDir)tmp\version\version.wxi ?>
+  
+  <!-- Build Environment -->
+  <?include $(var.ProjectDir)buildenv.wxi ?>
+
+  <!-- Modularization GUIDs -->
+  <?if $(var.Platform) = "x86" ?>
+    <?define ModularizationGuid = "7E5D863D-E794-478B-B575-FDAADDC5BB24" ?>
+  <?elseif $(var.Platform) = "x64" ?>
+    <?define ModularizationGuid = "2E9815DA-EB8B-4A7A-A0A3-380CB0331B28" ?>  
+  <?elseif $(var.Platform) = "ia64" ?>
+    <?define ModularizationGuid = "7A8B2DC4-97B1-4FD5-8DD9-8780456A0669" ?>
+  <?endif?>
+  
+  <Module Id="ZucchiniRuntime_$(var.Platform)" Language="0" Version="$(var.ProjectVersion.4)">
+    
+    <Package Id="$(var.ModularizationGuid)" Manufacturer="ZukiSoft, LLC" InstallerVersion="300" Platform="$(var.Platform)"/>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+
+      <!-- Since the x86 merge module may be installed alongside of one of the 64-bit modules, they have to in different <Directory> Ids -->
+      
+      <?if $(var.Platform) = "x86" ?>
+      
+      <Directory Id="ProgramFilesFolder">
+        <Component Id="gac32_zuki_web_server_dll" Guid="$(var.ModularizationGuid)" Win64="no">
+          <File Id="gac32_zuki_web_server_dll" Source="$(var.ZucchiniBinPath)zuki.web.server.dll" ProcessorArchitecture="$(var.Platform)" Assembly=".net" KeyPath="yes" Vital="yes"/>
+        </Component>
+      </Directory>
+
+       <?else?>
+      
+      <Directory Id="ProgramFiles64Folder">
+        <Component Id="gac64_zuki_web_server_dll" Guid="$(var.ModularizationGuid)" Win64="yes">
+          <File Id="gac64_zuki_web_server_dll" Source="$(var.ZucchiniBinPath)zuki.web.server.dll" ProcessorArchitecture="$(var.Platform)" Assembly=".net" KeyPath="yes" Vital="yes"/>
+        </Component>
+      </Directory>
+
+      <?endif?>
+
+    </Directory>
+
+  </Module>  
+  
+</Wix>

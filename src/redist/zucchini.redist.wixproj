@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.5</ProductVersion>
+    <ProjectGuid>{96AC2CA3-9BC4-4190-9615-E09BE5493127}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>zucchini-runtime</OutputName>
+    <OutputType>Module</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <Name>zucchini_merge</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>$(SolutionDir)\redist\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+    <SuppressSpecificWarnings>1055;1056;1076</SuppressSpecificWarnings>
+    <LinkerAdditionalOptions>-xo -bf -o "$(SolutionDir)tmp\wix\zucchini-runtime.wixout"</LinkerAdditionalOptions>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>$(SolutionDir)\redist\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <SuppressIces>ICE82</SuppressIces>
+    <SuppressSpecificWarnings>1055;1056;1076</SuppressSpecificWarnings>
+    <LinkerAdditionalOptions>-xo -bf -o "$(SolutionDir)tmp\wix\zucchini-runtime.wixout"</LinkerAdditionalOptions>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DefineConstants>Debug</DefineConstants>
+    <OutputPath>$(SolutionDir)\redist\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <SuppressSpecificWarnings>1055;1056;1076</SuppressSpecificWarnings>
+    <LinkerAdditionalOptions>-xo -bf -o "$(SolutionDir)tmp\wix\zucchini-runtime.wixout"</LinkerAdditionalOptions>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <OutputPath>$(SolutionDir)\redist\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <SuppressSpecificWarnings>1055;1056;1076</SuppressSpecificWarnings>
+    <LinkerAdditionalOptions>-xo -bf -o "$(SolutionDir)tmp\wix\zucchini-runtime.wixout"</LinkerAdditionalOptions>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ia64' ">
+    <DefineConstants>Debug</DefineConstants>
+    <OutputPath>$(SolutionDir)\redist\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <SuppressSpecificWarnings>1055;1056;1076</SuppressSpecificWarnings>
+    <LinkerAdditionalOptions>-xo -bf -o "$(SolutionDir)tmp\wix\zucchini-runtime.wixout"</LinkerAdditionalOptions>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ia64' ">
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <OutputPath>$(SolutionDir)\redist\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+    <SuppressSpecificWarnings>1055;1056;1076</SuppressSpecificWarnings>
+    <LinkerAdditionalOptions>-xo -bf -o "$(SolutionDir)tmp\wix\zucchini-runtime.wixout"</LinkerAdditionalOptions>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="..\..\tmp\version\version.wxi">
+      <Link>version.wxi</Link>
+    </Content>
+    <Content Include="buildenv.wxi" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="redist.wxs" />
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(SolutionDir)redist\%2a.%2a" attrib "$(SolutionDir)redist\%2a.%2a" -s -h -r
+if exist "$(SolutionDir)redist\zucchini-runtime-$(Platform).msm" del "$(SolutionDir)redist\zucchini-runtime-$(Platform).msm"
+if exist "$(SolutionDir)redist\zucchini-runtime-$(Platform).wixpdb" del "$(SolutionDir)redist\zucchini-runtime-$(Platform).wixpdb"</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>"%WIX%bin\light.exe" -out "$(SolutionDir)redist\zucchini-runtime-$(Platform).msm" -pdbout "$(SolutionDir)setup\zucchini-runtime-$(Platform).wixpdb" "$(SolutionDir)tmp\wix\zucchini-runtime.wixout" -sice:ICE61 -sw1055 -sw1056 -sw1076</PostBuildEvent>
+  </PropertyGroup>
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>
